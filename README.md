@@ -26,5 +26,5 @@ Website ini tampil rapi di ponsel, tablet, dan laptop.
 ---
 
 ## Tautan
-- Website: menyusul setelah *deploy* ke Vercel
+- Website: [Portofolio](https://portofolio-nanda-one.vercel.app/)
 - Dibuat oleh: Fernanda Chritstian A, SMKN 1 Pasuruan
