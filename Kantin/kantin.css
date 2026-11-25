@@ -1,3 +1,8 @@
+/* Gaya portofolio Andi Pratama
+   Palet: #1D3557 (utama), #E63946 (aksen), #F1FAEE (latar)
+   Huruf: Poppins (judul), Inter (isi)
+   Tata letak: mobile first, titik ubah 768px (tablet) dan 1024px (laptop) */
+
 /* 1. Reset */
 * {
   box-sizing: border-box;
@@ -10,17 +15,6 @@ img {
 }
 
 /* 2. Dasar halaman: warna dan huruf */
-:root {
-  --warna-utama: #1D3557;
-  --warna-judul: #1D3557;
-  --warna-aksen: #E63946;
-  --warna-tautan: #E63946;
-  --warna-latar: #F1FAEE;
-  --warna-teks: #333333;
-  --warna-kartu: #FFFFFF;
-  --warna-garis: #DDDDDD;
-}
-
 body {
   font-family: "Inter", Arial, sans-serif;
   font-size: 1rem;
@@ -123,12 +117,22 @@ main {
 }
 
 .hero img {
-  border: 4px solid var(--warna-aksen);
+  border: 4px solid #E63946;
   border-radius: 50%;
 }
 
 .hero h2 {
   font-size: 2rem;
+}
+
+.tombol {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  background-color: #E63946;
+  color: #FFFFFF;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 .kartu {
@@ -193,24 +197,18 @@ input, select, textarea {
   border-radius: 6px;
   font-family: inherit;
   font-size: 1rem;
-  background-color: var(--warna-kartu);
-  color: var(--warna-teks);
 }
 
 button {
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 6px;
-  background-color: var(--warna-aksen);
+  background-color: #E63946;
   color: #FFFFFF;
   font-family: inherit;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-}
-
-.keterangan {
-  font-size: 0.875rem;
 }
 
 /* 7. Footer */
@@ -273,6 +271,35 @@ footer a {
   font-size: 0.9rem;
 }
 
+:root {
+  --warna-utama: #1D3557;
+  --warna-judul: #1D3557;
+  --warna-tautan: #E63946;
+  --warna-latar: #F1FAEE;
+  --warna-teks: #333333;
+  --warna-kartu: #FFFFFF;
+  --warna-garis: #DDDDDD;
+  color-scheme: light;
+}
+
+body.gelap {
+  --warna-utama: #0B1526;
+  --warna-judul: #A8DADC;
+  --warna-tautan: #FF8A8A;
+  --warna-latar: #121A24;
+  --warna-teks: #E3E8EE;
+  --warna-kartu: #1C2836;
+  --warna-garis: #34465A;
+  color-scheme: dark;
+}
+
+/* 12. Tombol Kembali ke atas */
+.tombol-atas {
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 0.5rem;
+}
+
 .filter {
   display: flex;
   flex-wrap: wrap;
@@ -287,12 +314,6 @@ footer a {
   color: var(--warna-judul);
 }
 
-.tombol-filter.aktif {
-  border-color: var(--warna-utama);
-  background-color: var(--warna-utama);
-  color: #FFFFFF;
-}
-
 .label {
   display: inline-block;
   padding: 0.1rem 0.6rem;
@@ -304,13 +325,29 @@ footer a {
   font-weight: 600;
 }
 
-/* 11. Tema gelap: isi variabelcdiganti saat body memiliki class gelap */
-body.gelap {
-  --warna-utama :#0B1526;
-  --warna-judul: #A8DADC;
-  --warna-tautan: #FF8A8A;
-  --warna-latar: #121A24;
-  --warna-teks: #E3E8EE;
-  --warna-kartu: #1C2836;
-  --warna-garis: #34465A;
+/* Animasi menu buka dan tutup */
+.menu-ponsel nav {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-12px);
+    transition:
+        max-height 0.4s ease,
+        opacity 0.3s ease,
+        transform 0.4s ease;
+}
+
+.menu-ponsel[open]:not(.menutup) nav {
+    max-height: 300px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu-ponsel nav ul {
+    margin: 0;
+    padding: 10px 0;
+}
+
+.menu-ponsel summary {
+    cursor: pointer;
 }
