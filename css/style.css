@@ -293,6 +293,13 @@ body.gelap {
   color-scheme: dark;
 }
 
+/* 12. Tombol Kembali ke atas */
+.tombol-atas {
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 0.5rem;
+}
+
 .filter {
   display: flex;
   flex-wrap: wrap;

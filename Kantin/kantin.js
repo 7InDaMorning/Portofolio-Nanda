@@ -113,3 +113,10 @@ tombolTema.addEventListener("click", () => {
     tombolTema.textContent = "Mode Gelap🌙";
   }
 });
+
+// 6. Tombol kembali ke atas
+const tombolAtas = document.querySelector("#tombol-atas")
+
+tombolAtas.addEventListener ("click", () => {
+  window.scrollTo ({top: 0, behavior: "smooth"})
+})

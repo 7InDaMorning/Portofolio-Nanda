@@ -32,9 +32,9 @@ tombolTema.addEventListener("click", () => {
   
   
   if (document.body.classList.contains("gelap")) {
-    tombolTema.textContent = "Mode Terang";
+    tombolTema.textContent = "Mode Terang☀️";
     } else {
-    tombolTema.textContent = "Mode Gelap";
+    tombolTema.textContent = "Mode Gelap🌙";
   }
 });
 
@@ -102,7 +102,7 @@ function buatKartu(item) {
 <article class="kartu">
 <span class="label">${item.kategori}</span>
 <h3>${item.judul}</h3>
-<img src="${item.gambar}" alt="${item.alt}" width="280">
+<img src="${item.gambar}" alt="${item.alt}" width="280" height="184">
 <p>${item.deskripsi}</p>
 </article>`;
 }
@@ -214,3 +214,10 @@ async function ambilRepo() {
 if (daftarRepo) {
     ambilRepo();
 }
+
+// 6. Tombol kembali ke atas
+const tombolAtas = document.querySelector("#tombol-atas")
+
+tombolAtas.addEventListener ("click", () => {
+  window.scrollTo ({top: 0, behavior: "smooth"})
+})
